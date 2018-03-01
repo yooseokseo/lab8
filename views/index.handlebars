@@ -12,9 +12,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="/css/introHCI.css" rel="stylesheet">
+
   <script src="/js/canvas-to-blob.min.js"></script>
   <script src="/js/introHCI.js"></script>
   <script src="/js/camera.js"></script>
+
 
   <!-- this is a comment in HTML -->
 
@@ -38,7 +40,7 @@
     <div id="googleMaps" class="profile">
       <h3>Event Location</h3>
       <div id="map" style="max-height: 400px;"></div>
-    </div> 
+    </div>
 
     <hr>
 
@@ -94,8 +96,8 @@
 
           <div class="row">
             <label for="">Your Photo</label>
-            
-           <!--  <div class="col">
+
+             <div class="col">
               <div id="camera" class="profile" style="max-width: 250px;">
                 <video autoplay id="camera-video"></video>
                 <button id="camera-button" class="btn btn-primary">Take Photo</button>
@@ -105,13 +107,26 @@
             <div class="col">
               <canvas id="camera-canvas"></canvas>
             </div>
-            -->
+
           </div>
         </div>
       </div>
       <br>
-      
+
     </div>
   </div>
+  <script src="/js/googleMaps.js">
+
+  </script>
+  {{> googleMaps}}
+  <script>
+    $(function(){
+      $('div.box').bind("taphold", tapholdHandler);
+      function tapholdHandler(event){
+        $(event.target).addClass('taphold');
+      }
+      console.log('done');
+    });
+  </script>
 </body>
 </html>
